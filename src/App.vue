@@ -15,6 +15,8 @@ export default {
     const storedTab = localStorage.getItem('activeTab');
     if (storedTab) {
       this.activeTab = storedTab;
+    } else {
+      this.activeTab = 'home';
     }
   },
   watch: {
