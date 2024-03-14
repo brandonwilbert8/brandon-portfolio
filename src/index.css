@@ -4,15 +4,15 @@
 
 @font-face {
   font-family: 'Circular Spotify Text Medium';
-  src: url('src/assets/fonts/CircularSpotifyText-Medium.otf');
+  src: url('./assets/fonts/CircularSpotifyText-Medium.otf');
 }
 
 @font-face {
   font-family: 'Circular Spotify Text Light';
-  src: url('src/assets/fonts/CircularSpotifyText-Light.otf');
+  src: url('./assets/fonts/CircularSpotifyText-Light.otf');
 }
 
 @font-face {
   font-family: 'Circular Spotify Text Book';
-  src: url('src/assets/fonts/CircularSpotifyText-Book.otf');
+  src: url('./assets/fonts/CircularSpotifyText-Book.otf');
 }
