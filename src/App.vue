@@ -12,9 +12,17 @@ export default {
     };
   },
   created() {
-    if (this.$route.path !== '/home') {
-      this.$router.push('/home');
+    const storedTab = localStorage.getItem('activeTab');
+    if (storedTab) {
+      this.activeTab = storedTab;
+    } else {
+      this.activeTab = 'home';
     }
+  },
+  watch: {
+    activeTab(newTab) {
+      localStorage.setItem('activeTab', newTab);
+    },
   },
 };
 </script>
@@ -40,10 +48,14 @@ export default {
           <router-link to="/contact" :class="{ 'text-blue100': activeTab === 'contact', 'text-gray-800': activeTab !== 'contact', 'font-light': activeTab !== 'contact' }" class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 sm:mt-0 sm:ml-2 text-xl" @click="activeTab = 'contact'">Contact</router-link>
         </nav>
       </header>
-      <div class="p-6 text-left" v-if="activeTab !== 'home'">
-        <Name />
-        <Message />
-        <hr class="border-t-2 border-gray-300 mt-4" />
+      <div class="p-6 text-left">
+        <transition name="slide-fade">
+          <div v-if="activeTab !== 'home'">
+            <Name />
+            <Message />
+            <hr class="border-t-2 border-gray-300 mt-4" />
+          </div>
+        </transition>
       </div>
       <div class="h-[66vh] sm:h-[535px]">
         <router-view v-slot="{ Component }">
@@ -59,11 +71,19 @@ export default {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.6s ease;
 }
-
 .fade-enter-from,
 .fade-leave-to {
+  opacity: 0;
+}
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: 0.2s ease;
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(30px);
   opacity: 0;
 }
 </style>
