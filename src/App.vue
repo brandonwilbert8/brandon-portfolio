@@ -19,6 +19,11 @@ export default {
       this.activeTab = 'home';
     }
   },
+  methods: {
+    closeMenu() {
+      this.isOpen = false;
+    },
+  },
   watch: {
     activeTab(newTab) {
       localStorage.setItem('activeTab', newTab);
@@ -42,10 +47,48 @@ export default {
           </div>
         </div>
         <nav :class="isOpen ? 'block' : 'hidden'" class="px-2 pt-2 pb-4 sm:flex sm:p-0 gap-5 ml-1">
-          <router-link to="/home" :class="{ 'text-blue100': activeTab === 'home', 'text-gray-800': activeTab !== 'home', 'font-light': activeTab !== 'home' }" class="block px-2 py-1 font-semibold rounded hover:bg-blue-100 text-xl" @click="activeTab = 'home'">Home</router-link>
-          <router-link to="/about" :class="{ 'text-blue100': activeTab === 'about', 'text-gray-800': activeTab !== 'about', 'font-light': activeTab !== 'about' }" class="block px-2 py-1 font-semibold rounded hover:bg-blue-100 text-xl" @click="activeTab = 'about'">About</router-link>
-          <router-link to="/project" :class="{ 'text-blue100': activeTab === 'project', 'text-gray-800': activeTab !== 'project', 'font-light': activeTab !== 'project' }" class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 sm:mt-0 sm:ml-2 text-xl" @click="activeTab = 'project'">Projects</router-link>
-          <router-link to="/contact" :class="{ 'text-blue100': activeTab === 'contact', 'text-gray-800': activeTab !== 'contact', 'font-light': activeTab !== 'contact' }" class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 sm:mt-0 sm:ml-2 text-xl" @click="activeTab = 'contact'">Contact</router-link>
+          <router-link
+            to="/home"
+            :class="{ 'text-blue100': activeTab === 'home', 'text-gray-800': activeTab !== 'home', 'font-light': activeTab !== 'home' }"
+            class="block px-2 py-1 font-semibold rounded hover:bg-blue-100 text-xl"
+            @click="
+              {
+                activeTab = 'home';
+                this.isOpen = false;
+              }
+            "
+            >Home</router-link
+          >
+          <router-link
+            to="/about"
+            :class="{ 'text-blue100': activeTab === 'about', 'text-gray-800': activeTab !== 'about', 'font-light': activeTab !== 'about' }"
+            class="block px-2 py-1 font-semibold rounded hover:bg-blue-100 text-xl"
+            @click="
+              activeTab = 'about';
+              this.isOpen = false;
+            "
+            >About</router-link
+          >
+          <router-link
+            to="/project"
+            :class="{ 'text-blue100': activeTab === 'project', 'text-gray-800': activeTab !== 'project', 'font-light': activeTab !== 'project' }"
+            class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 sm:mt-0 sm:ml-2 text-xl"
+            @click="
+              activeTab = 'project';
+              this.isOpen = false;
+            "
+            >Projects</router-link
+          >
+          <router-link
+            to="/contact"
+            :class="{ 'text-blue100': activeTab === 'contact', 'text-gray-800': activeTab !== 'contact', 'font-light': activeTab !== 'contact' }"
+            class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 sm:mt-0 sm:ml-2 text-xl"
+            @click="
+              activeTab = 'contact';
+              this.isOpen = false;
+            "
+            >Contact</router-link
+          >
         </nav>
       </header>
       <div class="p-6 text-left">
@@ -79,7 +122,7 @@ export default {
 }
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: 0.2s ease;
+  transition: 0.5s ease;
 }
 .slide-fade-enter-from,
 .slide-fade-leave-to {
