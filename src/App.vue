@@ -19,11 +19,6 @@ export default {
       this.activeTab = 'home';
     }
   },
-  methods: {
-    closeMenu() {
-      this.isOpen = false;
-    },
-  },
   watch: {
     activeTab(newTab) {
       localStorage.setItem('activeTab', newTab);
@@ -54,7 +49,7 @@ export default {
             @click="
               {
                 activeTab = 'home';
-                this.isOpen = false;
+                isOpen = false;
               }
             "
             >Home</router-link
@@ -65,7 +60,7 @@ export default {
             class="block px-2 py-1 font-semibold rounded hover:bg-blue-100 text-xl"
             @click="
               activeTab = 'about';
-              this.isOpen = false;
+              isOpen = false;
             "
             >About</router-link
           >
@@ -75,7 +70,7 @@ export default {
             class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 sm:mt-0 sm:ml-2 text-xl"
             @click="
               activeTab = 'project';
-              this.isOpen = false;
+              isOpen = false;
             "
             >Projects</router-link
           >
@@ -85,7 +80,7 @@ export default {
             class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 sm:mt-0 sm:ml-2 text-xl"
             @click="
               activeTab = 'contact';
-              this.isOpen = false;
+              isOpen = false;
             "
             >Contact</router-link
           >
