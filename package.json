@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "^10.9.0",
     "auto-typer-vue3": "^1.2.2",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0",
