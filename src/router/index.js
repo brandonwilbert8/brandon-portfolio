@@ -31,6 +31,10 @@ const router = createRouter({
       name: 'contact',
       component: ContactView,
     },
+    {
+      path: '/:pathMatch(.*)',
+      redirect: '/home',
+    },
   ],
 });
 
