@@ -27,10 +27,19 @@ export default {
     cleanSessionStorage() {
       sessionStorage.clear();
     },
+    updateActiveTab(newTab) {
+      this.activeTab = newTab;
+      sessionStorage.setItem('activeTab', newTab);
+    },
+  },
+  beforeRouteEnter(to, from, next) {
+    const storedTab = sessionStorage.getItem('activeTab');
+    const activeTab = storedTab || 'home';
+    next((vm) => vm.updateActiveTab(activeTab));
   },
   watch: {
-    activeTab(newTab) {
-      sessionStorage.setItem('activeTab', newTab);
+    $route(to, from) {
+      this.updateActiveTab(to.name);
     },
   },
 };
