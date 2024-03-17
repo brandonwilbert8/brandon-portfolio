@@ -55,7 +55,7 @@ export default {
             <router-link
               to="/home"
               :class="{ 'text-blue100': activeTab === 'home', 'text-gray-800': activeTab !== 'home', 'dark:text-neutral-300': activeTab !== 'home', 'font-light': activeTab !== 'home' }"
-              class="block px-2 py-1 font-semibold rounded hover:bg-blue-100 dark:hover:bg-blue100 text-xl"
+              class="block px-2 py-1 font-semibold rounded hover:bg-blue-100 dark:hover:bg-sky-500 text-xl"
               @click="
                 {
                   activeTab = 'home';
@@ -67,7 +67,7 @@ export default {
             <router-link
               to="/about"
               :class="{ 'text-blue100': activeTab === 'about', 'text-gray-800': activeTab !== 'about', 'dark:text-neutral-300': activeTab !== 'about', 'font-light': activeTab !== 'about' }"
-              class="block px-2 py-1 font-semibold rounded hover:bg-blue-100 dark:hover:bg-blue100 text-xl"
+              class="block px-2 py-1 font-semibold rounded hover:bg-blue-100 dark:hover:bg-sky-500 text-xl"
               @click="
                 activeTab = 'about';
                 isOpen = false;
@@ -77,7 +77,7 @@ export default {
             <router-link
               to="/project"
               :class="{ 'text-blue100': activeTab === 'project', 'text-gray-800': activeTab !== 'project', 'dark:text-neutral-300': activeTab !== 'project', 'font-light': activeTab !== 'project' }"
-              class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 dark:hover:bg-blue100 sm:mt-0 sm:ml-2 text-xl"
+              class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 dark:hover:bg-sky-500 sm:mt-0 sm:ml-2 text-xl"
               @click="
                 activeTab = 'project';
                 isOpen = false;
@@ -87,7 +87,7 @@ export default {
             <router-link
               to="/contact"
               :class="{ 'text-blue100': activeTab === 'contact', 'text-gray-800': activeTab !== 'contact', 'dark:text-neutral-300': activeTab !== 'contact', 'font-light': activeTab !== 'contact' }"
-              class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 dark:hover:bg-blue100 sm:mt-0 sm:ml-2 text-xl"
+              class="mt-1 block px-2 py-1 font-semibold rounded hover:bg-blue-100 dark:hover:bg-sky-500 sm:mt-0 sm:ml-2 text-xl"
               @click="
                 activeTab = 'contact';
                 isOpen = false;
